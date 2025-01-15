@@ -1,5 +1,5 @@
 const {Categories,Products,Admin} =require('../models/index')
-const bcrypt=require("bcrypt")
+
 
 module.exports={
 getAll:async(req,res)=>{
@@ -42,25 +42,12 @@ Update:async(req,res)=>{
         console.log("error",error);
         
     }
-},
-register:async(req,resp)=>{
-    try{
-const {name,email,password}=req.body
-const check=await Admin.findOne({where:{email}})
-if (check) {
-  return  resp.status(404).send("email existed")
 }
-const hachPassword=await bcrypt.hash(password,15)
- const newAdmin=await Admin.create({name:name,email:email,password:hachPassword})
- return resp.status(201).send("registred suceessfully")
-    }
-    catch{(error)=>{throw error}}
-
 }
 
 
 
 
-}
+
 
 

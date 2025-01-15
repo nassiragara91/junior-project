@@ -80,16 +80,12 @@ const App = () => {
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => setView("add")}>Add Product</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#" onClick={() => setView("update")}>Update Product</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#" onClick={() => setView("search")}>Search</a>
-              </li>
+             
+              
             </ul>
             <form className="d-flex" role="search">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setSearch(e.target.value.toLowerCase())} />
-              <button className="btn btn-outline-success" type="submit">Search</button>
+              <button className="btn btn-outline-success" type="submit" onClick={()=>{ setView("search")}} >Search</button>
             </form>
           </div>
         </div>
